@@ -15,9 +15,11 @@ describe('App', () => {
     render(<App />);
 
     expect(
-      screen.getByRole('heading', { name: /make smarter decisions/i }),
+      screen.getByRole('heading', { name: /weighted matrix/i }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /^start$/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /start scoring/i }),
+    ).toBeInTheDocument();
 
     expect(screen.getByText('Overview')).toBeInTheDocument();
     expect(screen.getByText('Matrix')).toBeInTheDocument();
@@ -55,7 +57,7 @@ describe('App', () => {
 
     expect(document.getElementById('decision-matrix')).toBeInTheDocument();
 
-    await user.click(screen.getByRole('button', { name: /^start$/i }));
+    await user.click(screen.getByRole('button', { name: /start scoring/i }));
 
     expect(scrollIntoViewMock).toHaveBeenCalledWith({
       behavior: 'smooth',
@@ -77,7 +79,7 @@ describe('App', () => {
 
     render(<App />);
 
-    expect(screen.getByRole('button', { name: /^start$/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /start scoring/i })).toBeInTheDocument();
     expect(screen.getByDisplayValue('Big move')).toBeInTheDocument();
     expect(screen.getByText(/leading option: move abroad/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/live score for move abroad/i)).toHaveTextContent(
@@ -102,7 +104,7 @@ describe('App', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /make smarter decisions/i,
+        name: /weighted matrix/i,
       }),
     ).toBeInTheDocument();
 
