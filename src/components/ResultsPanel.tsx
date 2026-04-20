@@ -53,9 +53,9 @@ export function ResultsPanel({
 
   return (
     <aside className="min-w-0">
-      <Card className="h-full bg-white/[0.74]">
-        <CardHeader className="border-b border-border/[0.45] pb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+      <Card className="h-full bg-white/85">
+        <CardHeader className="border-b border-border pb-6">
+          <p className="text-xs font-semibold uppercase text-muted-foreground">
             Results
           </p>
           <CardTitle>Your weighted view</CardTitle>
@@ -73,16 +73,16 @@ export function ResultsPanel({
               return (
                 <article
                   className={cn(
-                    'rounded-[24px] border p-4 transition',
+                    'rounded-lg border p-4 transition',
                     isLeading
-                      ? 'border-primary/[0.3] bg-[rgba(243,226,210,0.72)] shadow-[0_18px_45px_rgba(155,87,46,0.10)]'
-                      : 'border-border/[0.35] bg-white/[0.68]',
+                      ? 'border-primary/30 bg-slate-50 shadow-[0_18px_45px_rgba(15,23,42,0.1)]'
+                      : 'border-border bg-white/75',
                   )}
                   key={option.id}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <p className="font-display text-3xl tracking-[-0.05em] text-foreground/80">
+                      <p className="font-display text-3xl tracking-normal text-foreground/80">
                         #{index + 1}
                       </p>
                       <div>
@@ -95,7 +95,7 @@ export function ResultsPanel({
                       </div>
                     </div>
                     {isLeading ? (
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                      <span className="rounded-md bg-primary/10 px-3 py-1 text-xs font-semibold uppercase text-primary">
                         Leading
                       </span>
                     ) : null}
@@ -115,12 +115,12 @@ export function ResultsPanel({
             })}
           </div>
 
-          <div className="rounded-[24px] border border-border/[0.35] bg-white/[0.62] p-5">
+          <div className="rounded-lg border border-border bg-white/75 p-5">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              <p className="text-xs font-semibold uppercase text-muted-foreground">
                 Influence
               </p>
-              <h3 className="font-display text-2xl tracking-[-0.03em] text-foreground">
+              <h3 className="font-display text-2xl tracking-normal text-foreground">
                 Category share
               </h3>
             </div>
@@ -129,7 +129,7 @@ export function ResultsPanel({
               <div className="mt-5 space-y-3">
                 {summary.categoryInfluence.map((category) => (
                   <div
-                    className="flex items-center justify-between rounded-[18px] bg-accent/50 px-4 py-3"
+                    className="flex items-center justify-between rounded-md bg-accent px-4 py-3"
                     key={category.id}
                   >
                     <span className="text-sm font-medium text-foreground/80">
@@ -149,7 +149,7 @@ export function ResultsPanel({
             )}
           </div>
 
-          <div className="flex flex-col gap-4 rounded-[24px] border border-border/[0.35] bg-[rgba(255,249,243,0.72)] p-5">
+          <div className="flex flex-col gap-4 rounded-lg border border-border bg-slate-50/90 p-5">
             <p className="text-sm leading-6 text-muted-foreground">
               One active decision is stored locally in this browser for quick
               return visits.
@@ -157,8 +157,8 @@ export function ResultsPanel({
             <Button className="w-full sm:w-auto" onClick={onReset}>
               Reset decision
             </Button>
-            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              {matrix.options.length} options · {matrix.categories.length} categories
+            <p className="text-xs uppercase text-muted-foreground">
+              {matrix.options.length} options / {matrix.categories.length} categories
             </p>
           </div>
         </CardContent>
