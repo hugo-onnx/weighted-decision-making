@@ -95,7 +95,17 @@ select {
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--primary) 26%, white);
+    background-color: rgba(226, 232, 240, 0.86);
+    color: #0f172a;
+    text-shadow: none;
+  }
+
+  .hero-title::selection,
+  .hero-title *::selection {
+    background-color: rgba(226, 232, 240, 0.86);
+    color: #0f172a;
+    -webkit-text-fill-color: #0f172a;
+    text-shadow: none;
   }
 }
 
