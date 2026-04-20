@@ -3,17 +3,17 @@ const TAB_ITEMS = ['Overview', 'Matrix', 'Insights', 'History'];
 export function SectionTabs() {
   return (
     <section aria-labelledby="section-tabs-title" className="relative">
-      <div className="overflow-hidden rounded-[28px] border border-border/[0.55] bg-white/[0.7] px-6 py-5 shadow-[0_22px_70px_rgba(91,50,32,0.10)] backdrop-blur-xl sm:px-7">
+      <div className="overflow-hidden rounded-lg border border-border bg-white/80 px-5 py-5 shadow-[0_20px_60px_rgba(15,23,42,0.07)] backdrop-blur-xl sm:px-6">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-              Workspace preview
+            <p className="text-xs font-semibold uppercase text-muted-foreground">
+              Workspace
             </p>
             <h2
-              className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground"
+              className="font-display text-2xl font-semibold tracking-normal text-foreground"
               id="section-tabs-title"
             >
-              A lightweight tab bar for the main decision flow.
+              From priorities to ranking.
             </h2>
           </div>
 
@@ -28,10 +28,10 @@ export function SectionTabs() {
                 <li key={label}>
                   <span
                     aria-current={isActive ? 'page' : undefined}
-                    className={`inline-flex min-w-28 items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition ${
+                    className={`inline-flex min-w-28 items-center justify-center rounded-md px-4 py-2.5 text-sm font-medium transition ${
                       isActive
-                        ? 'bg-primary text-primary-foreground shadow-[0_12px_30px_rgba(155,87,46,0.2)]'
-                        : 'border border-border/[0.6] bg-white/[0.65] text-foreground/80'
+                        ? 'bg-primary text-primary-foreground shadow-[0_12px_30px_rgba(15,23,42,0.16)]'
+                        : 'border border-border bg-white/70 text-foreground/75'
                     }`}
                   >
                     {label}
