@@ -8,7 +8,6 @@ import { Sparkles } from 'lucide-react';
 interface ShaderShowcaseProps {
   headingId?: string;
   onPrimaryCtaClick?: () => void;
-  onSecondaryCtaClick?: () => void;
 }
 
 const SHADER_MIN_PIXEL_RATIO = 2;
@@ -23,7 +22,6 @@ const SHADER_CONTEXT = {
 export default function ShaderShowcase({
   headingId = 'landing-title',
   onPrimaryCtaClick,
-  onSecondaryCtaClick,
 }: ShaderShowcaseProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
@@ -149,7 +147,7 @@ export default function ShaderShowcase({
 
           <motion.h1
             animate={{ opacity: 1, y: 0 }}
-            aria-label="Weighted Matrix"
+            aria-label="Make your hardest decision in 60 seconds"
             className="mb-5 text-5xl font-bold leading-none tracking-normal text-white sm:text-6xl md:text-7xl lg:text-8xl"
             id={headingId}
             initial={{ opacity: 0, y: 30 }}
@@ -159,7 +157,7 @@ export default function ShaderShowcase({
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
-              className="mb-2 block text-4xl font-light tracking-normal text-white/90 sm:text-5xl lg:text-6xl"
+              className="mb-2 block pb-1 text-4xl font-light leading-[1.16] tracking-normal text-white/90 sm:text-5xl lg:text-6xl"
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -175,12 +173,12 @@ export default function ShaderShowcase({
                 repeat: Number.POSITIVE_INFINITY,
               }}
             >
-              Weighted
+              Make your hardest
             </motion.span>
             <span className="block font-black text-white drop-shadow-2xl">
-              Decision Matrix
+              decision
             </span>
-            <span className="block font-light italic text-white/80">Clarity</span>
+            <span className="block font-light italic text-white/80">in 60 seconds</span>
           </motion.h1>
 
           <motion.p
@@ -189,8 +187,8 @@ export default function ShaderShowcase({
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            Compare choices with weighted priorities, live scoring, and a
-            recommendation that stays grounded in what matters most.
+            Weight your priorities, score your options, and get an instant
+            recommendation grounded in logic.
           </motion.p>
 
           <motion.div
@@ -200,22 +198,13 @@ export default function ShaderShowcase({
             transition={{ delay: 1, duration: 0.6 }}
           >
             <motion.button
-              className="min-h-12 cursor-pointer rounded-full border-2 border-white/30 bg-transparent px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 hover:text-cyan-100 sm:px-10 sm:py-4"
-              onClick={onSecondaryCtaClick ?? onPrimaryCtaClick}
-              type="button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View workflow
-            </motion.button>
-            <motion.button
               className="min-h-12 cursor-pointer rounded-full bg-gradient-to-r from-cyan-500 to-orange-500 px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-cyan-400 hover:to-orange-400 hover:shadow-xl sm:px-10 sm:py-4"
               onClick={onPrimaryCtaClick}
               type="button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Start scoring
+              Start
             </motion.button>
           </motion.div>
         </main>
