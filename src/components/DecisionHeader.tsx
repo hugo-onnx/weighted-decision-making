@@ -27,13 +27,13 @@ export function DecisionHeader({
 }: DecisionHeaderProps) {
   return (
     <header className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,380px)]">
-      <Card className="bg-white/[0.66]">
+      <Card className="bg-white/85">
         <CardHeader>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          <p className="text-xs font-semibold uppercase text-muted-foreground">
             Decision workspace
           </p>
           <CardTitle className="text-3xl sm:text-4xl">
-            Shape the matrix below the reflection.
+            Shape the comparison below the paths.
           </CardTitle>
           <CardDescription className="max-w-2xl text-base leading-7">
             Name the decision, define the options in front of you, then weight
@@ -43,22 +43,22 @@ export function DecisionHeader({
         </CardHeader>
       </Card>
 
-      <Card className="bg-[rgba(255,250,245,0.82)]">
+      <Card className="bg-slate-50/90">
         <CardHeader className="pb-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          <p className="text-xs font-semibold uppercase text-muted-foreground">
             Current decision
           </p>
           <CardTitle className="text-2xl">Set the working title</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <label
-            className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+            className="text-xs font-semibold uppercase text-muted-foreground"
             htmlFor="decision-title"
           >
             Decision title
           </label>
           <Input
-            className="h-[3.25rem] rounded-[20px] text-base"
+            className="h-[3.25rem] rounded-md text-base"
             id="decision-title"
             onChange={(event) => onTitleChange(event.target.value)}
             placeholder="Untitled decision"
