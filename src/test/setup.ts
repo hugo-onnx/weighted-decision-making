@@ -1,6 +1,19 @@
 import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
-import { afterEach } from 'vitest';
+import { afterEach, vi } from 'vitest';
+
+vi.mock('@paper-design/shaders-react', async () => {
+  const React = await import('react');
+  const createShaderMock =
+    (testId: string) =>
+    ({ className, style }: { className?: string; style?: object }) =>
+      React.createElement('div', { className, 'data-testid': testId, style });
+
+  return {
+    MeshGradient: createShaderMock('mesh-gradient'),
+    PulsingBorder: createShaderMock('pulsing-border'),
+  };
+});
 
 function createStorageMock(): Storage {
   const store = new Map<string, string>();
