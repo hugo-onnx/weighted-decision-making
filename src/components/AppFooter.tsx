@@ -8,7 +8,7 @@ export function AppFooter() {
   return (
     <footer
       aria-labelledby="site-footer-title"
-      className="rounded-lg border border-border bg-white/80 px-5 py-7 shadow-[0_20px_60px_rgba(15,23,42,0.07)] backdrop-blur-xl sm:px-6"
+      className="rounded-lg border border-border bg-card px-5 py-7 shadow-[0_20px_70px_rgba(6,182,212,0.1)] backdrop-blur-2xl sm:px-6"
     >
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
         <div className="space-y-3">
@@ -33,7 +33,7 @@ export function AppFooter() {
         >
           {FOOTER_LINKS.map((link) => (
             <a
-              className="inline-flex items-center justify-center rounded-md border border-border bg-white/70 px-4 py-2.5 text-sm font-medium text-foreground/80 transition hover:border-primary/25 hover:text-primary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-white/5 px-4 py-2.5 text-sm font-medium text-foreground/80 transition hover:border-cyan-300/35 hover:bg-white/10 hover:text-cyan-100"
               href={link.href}
               key={link.label}
             >
