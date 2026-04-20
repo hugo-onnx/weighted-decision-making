@@ -27,7 +27,7 @@ export function DecisionHeader({
 }: DecisionHeaderProps) {
   return (
     <header className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,380px)]">
-      <Card className="bg-white/85">
+      <Card>
         <CardHeader>
           <p className="text-xs font-semibold uppercase text-muted-foreground">
             Decision workspace
@@ -43,7 +43,7 @@ export function DecisionHeader({
         </CardHeader>
       </Card>
 
-      <Card className="bg-slate-50/90">
+      <Card className="bg-white/5">
         <CardHeader className="pb-4">
           <p className="text-xs font-semibold uppercase text-muted-foreground">
             Current decision
@@ -58,7 +58,7 @@ export function DecisionHeader({
             Decision title
           </label>
           <Input
-            className="h-[3.25rem] rounded-md text-base"
+            className="h-[3.25rem] text-base"
             id="decision-title"
             onChange={(event) => onTitleChange(event.target.value)}
             placeholder="Untitled decision"
